@@ -8,11 +8,9 @@
 - For the property factor, I used King county house price dataset from Kaggle and King county zipcode centroids dataset from Amazon AWS (https://prod-hub-indexer.s3.amazonaws.com) to determine which most appropriate neighborhood of the chosen city.
 - We will explore nearby and common venues of the area using Foursquare API and cluster them into several clusters. The coordinates used in the algorithms will be extracted from house price dataset and zipcode centroid dataset.
 # 3.Methodology
-In this section, I will do exploratory analysis and visualize the data obtained to have a first look at our chosen area. To complete this task, I decided to divide my methodology into 4 sub-sections.
+In this section, I will do exploratory analysis and visualize the data obtained to have a first look at our chosen area. To complete this task, I decided to divide my methodology into 4 sub-sections:
 ### 3.1 Crime rates analysis
-In this section, we will take a quick look at the crime rates reported in 2019 by the Sheriff's office in the major cities of King County to determine which city is the safest.
-
-Once we find which one is the safest, we will pick that city to become the city of interest to dig deeper into it.
+In this section, we will take a quick look at the crime rates reported in 2019 by the Sheriff's office in the major cities of King County to determine which city is the safest. Once we find which one is the safest, we will pick that city to become the city of interest to dig deeper into it.
 ### 3.2 House prices analysis
 In this section, we will do a quick house prices analysis of our chosen city to get a broad feeling about how expensive house prices are around the neighborhood.
 ### 3.3 Explore the neighborhoods
