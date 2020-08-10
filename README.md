@@ -77,6 +77,7 @@ This is when I use **WordCloud** to see the insights of clusters and the reasons
 ![](/images/cluster2_cloud_name.png)
 Crime count by clusters:
 ![](images/crime_count_by_clusters.png)
+
 # 5.Discussion
 First of all, King County is one of the best place to live in the US right now. I used public dataset of King County Sheriff's crimes reported in 2019 to conclude that among five major cities of King County, **Bellevue** is the safest city to consider buying properties and settling down with comparatively low crime cases reported in 2019. 
 
@@ -88,6 +89,7 @@ I've then deduced 3 clusters of **Belevue** into:
 - **CLUSTER 0: Residential neighborhood by Parks and Playgrounds**
 - **CLUSTER 1: City Center and Bussinesses Venues**
 - **CLUSTER 2: Residential neighborhood by the Lake**
+
 # 6.Conclusion
 Based on what we have learned about **Bellevue** city, I would recommend stakeholders and customers (in this case a family of four with upper-middle class income) to consider neighborhood around **CLUSTER 0 (zipcode 98008)** since it has the lowest crime rate, house prices around 600k-700k US dollars, there are parks and playgrounds for kids, etc. 
 
