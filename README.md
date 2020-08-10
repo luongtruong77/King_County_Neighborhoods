@@ -70,6 +70,7 @@ Crime count by clusters:
 ![](images/crime_count_by_clusters.png)
 # 5.Discussion
 First of all, King County is one of the best place to live in the US right now. I used public dataset of King County Sheriff's crimes reported in 2019 to conclude that among five major cities of King County, **Bellevue** is the safest city to consider buying properties and settling down with comparatively low crime cases reported in 2019. </br> </br>
+
 I have noticed that house prices distribution around this city is relatively high, which sets a unique standards for individuals who want to move in this city's neighborhood. **98004** neighborhood is the most expensive neighborhood which has averagely 1.4 million US dollars for a house. For more in depth of King County's house prices analysis and prediction, please visit [HERE](https://github.com/luongtruong7793/House-Sales-in-King-County-WA/blob/master/House%20Sales%20in%20King%20County%2C%20USA.ipynb) </br></br>
 I also used **Folium** to create maps around **Bellevue** and utilized **Foursquare API** to segment and cluster neighborhoods of **Bellevue** into 3 clusters, each of cluster has its own characteristics. Furthermore, I used **WordCloud** to visualize the frequencies of venues around 3 clusters to emphasize their aspects. </br></br>
 I've then deduced 3 clusters of **Belevue** into:
