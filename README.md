@@ -8,7 +8,7 @@
 - For the property factor, I used King county house price dataset from Kaggle and King county zipcode centroids dataset from Amazon AWS (https://prod-hub-indexer.s3.amazonaws.com) to determine which most appropriate neighborhood of the chosen city.
 - We will explore nearby and common venues of the area using Foursquare API and cluster them into several clusters. The coordinates used in the algorithms will be extracted from house price dataset and zipcode centroid dataset.
 # 3.Methodology
-In this section, I will do exploratory analysis and visualize the data obtained to have a first look at our chosen area. To complete this task, I decided to divide my methodology into 5 sub-sections.
+In this section, I will do exploratory analysis and visualize the data obtained to have a first look at our chosen area. To complete this task, I decided to divide my methodology into 4 sub-sections.
 ### 3.1 Crime rates analysis
 In this section, we will take a quick look at the crime rates reported in 2019 by the Sheriff's office in the major cities of King County to determine which city is the safest. </br>
 Once we find which one is the safest, we will pick that city to become the city of interest to dig deeper into it.
@@ -21,3 +21,14 @@ In this section, we will:
 - Use **Foursquare API** to explore the neighborhoods to get to know more about the city itself.
 ### 3.4 Cluster the neighborhoods
 In this section, we will:
+- Use KMean algorithm to cluster neighborhoods into different clusters.
+- Explore nearby venues for each cluster and assign names for each cluster based on its own characteristics.
+# 4.Results
+### 4.1 Crime rates analysis
+This is the first 10 rows of King County's crime dataset after loading data in pandaframe and cleaning it. The original dataset has 15 columns but I only choose features that are in our interest to display.
+![](https://github.com/luongtruong7793/King_County_Neighborhoods/blob/master/images/4.1p1.png)
+I then define 5 major cities, which are SEATTLE, BELLEVUE, KENT, RENTON, and FEDERAL WAY based on criteria of kingcounty.gov and use **matplotlib library** to plot the graph.</br>
+This graph shows number of crimes commited by five major cities in 2019 in King County.
+![](https://github.com/luongtruong7793/King_County_Neighborhoods/blob/master/images/4.1p2.png)
+As we can see from the graph, **Bellevue** is the safest city with the least crime counts reported in 2019. Even though **Seattle** is the most popular and biggest city of King County, with almost 8000 cases committed in 2019, it is not a very safe city to consider buying properties or to live a peaceful life. </br>
+Now that we have chosen **Bellevue** as our city of interest, let's dive deeper into it and explore its house prices in the past.
