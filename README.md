@@ -35,4 +35,47 @@ Now that we have chosen **Bellevue** as our city of interest, let's dive deeper 
 ### 4.2 House prices analysis
 In this section, I use zipcode dataset of King county from kingcounty.gov and house price dataset from Kaggle to merge and filter the data. Even though we are not digging too deep into this house price dataset, let's look at the overal correlation between its features by the heatmap created by using **seaborn library**.
 ![](/images/4.2p1.png)
-Even though the dataset about house prices look very interesting, we are not going to analyze the price as a whole, but rather comparing the average house prices by **Bellevue**'s zipcodes. If you are interested in the house price dataset, for more in depth of King County's house prices analysis and prediction, please visit [HERE](https://github.com/luongtruong7793/House-Sales-in-King-County-WA/blob/master/House%20Sales%20in%20King%20County%2C%20USA.ipynb) . Throughout this project, I will use *zipcode* as an indicator of the neighborhood since I do not have much data on the neighborhoods themselves and the maps (will be created later) will tell pretty much everything we need to know about **Bellevue**.
+Even though the dataset about house prices look very interesting, we are not going to analyze the price as a whole, but rather comparing the average house prices by **Bellevue**'s zipcodes. If you are interested in the house price dataset, for more in depth of King County's house prices analysis and prediction, please visit [HERE](https://github.com/luongtruong7793/House-Sales-in-King-County-WA/blob/master/House%20Sales%20in%20King%20County%2C%20USA.ipynb) . Throughout this project, I will use *zipcode* as an indicator of the neighborhood since I do not have much data on the neighborhoods themselves and the maps (will be created later) will tell pretty much everything we need to know about **Bellevue**. </br>
+I then filter zipcodes that belong to Bellevue from zipcode dataset to get the average house prices based on zipcode from house price dataset and graph the data as below.
+![](/images/4.2p2.png)
+At a quick glance, every neighborhood of the city of Bellevue has a relatively high on the house price average. Specifically, in average, houses in 98004 neighborhood cost about **1.4 million US dollars** and they all seem to set a very high standards for houses in this city. So, my recommendation for buying a house around this city is to have a budget with at least $600k. </br>
+### 4.3 Explore the neighborhood
+As mentioned above, I use **geopy library** to get the latitude and longitude values of Bellevue City and **folium library** to create the map with its neighborhoods circled as below.
+![](/images/4.3p1.png)
+I then use **Foursquare API** to explore the neighborhoods to get to know more about the city itself. </br>
+As mentioned above, the **98004** neighborhood seems to be the most expensive neighborhood, let's explore it and see why its property value is that expensive compared to other neighborhoods.</br>
+I then set the limit of 100 venues around the neighborhood and the radius of 500m to see the most common venues around this neighborhood. I create URL using 'explore' endpoint and 'get' method to get the results and put it in **pandaFrame**</br>
+![](/images/98004_top10venues.png)
+I then use **pandas library** to sort through and get the data of the top 10 most frequent venues around this small neighborhood. Once again, I plot it using bar chart from **seaborn library**
+![](/images/98004_freq_venues.png)
+**Observation:** This is a small neighborhood with mostly coffee shop, hotel, stores, mall, and restaurants, etc. saying that this is most likely the city center area, which is for offices, tourists, bussinesses, and large companies. This is the reason why property and houses are very expensive around this neighborhood. </br>
+### 4.4 Cluster the neighborhood
+First of, I use **Foursquare API**'s *explore* endpoint to get top 15 venues of **Bellevue** along with the venues' categories.
+![](/images/bellevue_top15_venues.png)
+Then I use get_dummies method of **pandas** to one_hot_encode the data. Later, I use groupby method to group the data by 'Neighborhood' and take the mean() of the results to get the frequencies of venues around the city. Below is the data of the most 10 common venues by zipcodes.
+![](/images/bellevue_top10_most_common.png)
+I then use k-means clustering algorithm to cluster our neighborhoods. After the clusters generated, I use **Folium** to map the clusters with different colors for different clusters where:
+- **RED** : CLUSTER 0
+- **PURPLE** : CLUSTER 1
+- **GREEN** : CLUSTER 2
+![](/images/clusters_map.png)
+This is when I use **WordCloud** to see the insights of clusters and the reasons behind the algorithm runs the way it runs. I also name each cluster based on what I observe. </br>
+***CLUSTER 0 :***
+![](/images/cluster0_cloud_name.png)
+***CLUSTER 1 :***
+![](/images/cluster1_cloud_name.png)
+***CLUSTER 2 :***
+![](/images/cluster2_cloud_name.png)
+Crime count by clusters:
+![](images/crime_count_by_clusters.png)
+# 5.Discussion
+First of all, King County is one of the best place to live in the US right now. I used public dataset of King County Sheriff's crimes reported in 2019 to conclude that among five major cities of King County, **Bellevue** is the safest city to consider buying properties and settling down with comparatively low crime cases reported in 2019. </br> </br>
+I have noticed that house prices distribution around this city is relatively high, which sets a unique standards for individuals who want to move in this city's neighborhood. **98004** neighborhood is the most expensive neighborhood which has averagely 1.4 million US dollars for a house. For more in depth of King County's house prices analysis and prediction, please visit [HERE](https://github.com/luongtruong7793/House-Sales-in-King-County-WA/blob/master/House%20Sales%20in%20King%20County%2C%20USA.ipynb) </br></br>
+I also used **Folium** to create maps around **Bellevue** and utilized **Foursquare API** to segment and cluster neighborhoods of **Bellevue** into 3 clusters, each of cluster has its own characteristics. Furthermore, I used **WordCloud** to visualize the frequencies of venues around 3 clusters to emphasize their aspects. </br></br>
+I've then deduced 3 clusters of **Belevue** into:
+- **CLUSTER 0: Residential neighborhood by Parks and Playgrounds**
+- **CLUSTER 1: City Center and Bussinesses Venues**
+- **CLUSTER 2: Residential neighborhood by the Lake**
+# 6.Conclusion
+Based on what we have learned about **Bellevue** city, I would recommend stakeholders and customers (in this case a family of four with upper-middle class income) to consider neighborhood around **CLUSTER 0 (zipcode 98008)** since it has the lowest crime rate, house prices around 600k-700k US dollars, there are parks and playgrounds for kids, etc. </br> </br>
+There is no doubt that **Bellevue** never stops growing since there are many top companies located here (Microsoft, Amazon, T-Mobile, Boeing, etc.) and it is also very close the famous University of Washington. As a data scientist, I have found that **Bellevue** is considered one of the best places for jobs, schools, communities, entertainments, etc.
